@@ -26,10 +26,12 @@ namespace OCR_WinForm
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 var image = new Bitmap(openFileDialog.FileName);
+                pbImageBeforeOCR.Image = image;
                 this.Text = "OCR in progress";
 
                 image = PreprocesImage(image);
                 //image.Save(@"D:\UpWork\OCR_WinForm\Preprocess_BeforeOCR.jpg");
+                pbImageBeforeOCR.Image = image;
 
                 var ocr = new TesseractEngine(@"D:\UpWork\OCR_WinForm\OCR_WinForm\bin\Debug\tessdata", "eng", EngineMode.TesseractAndCube);
                 var page = ocr.Process(image);
@@ -48,7 +50,6 @@ namespace OCR_WinForm
             //make an empty bitmap the same size as scrBitmap
             image = ResizeImage(image, image.Width * 5, image.Height * 5);
             //image.Save(@"D:\UpWork\OCR_WinForm\Preprocess_Resize.jpg");
-
 
             Bitmap newBitmap = new Bitmap(image.Width, image.Height);
             for (int i = 0; i < image.Width; i++)
