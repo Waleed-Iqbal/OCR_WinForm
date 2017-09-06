@@ -1,6 +1,6 @@
 ﻿namespace OCR_WinForm
 {
-    partial class Form1
+    partial class OCR
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnOCR = new System.Windows.Forms.Button();
-            this.txtResult = new System.Windows.Forms.TextBox();
+            this.txtResult = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnOCR
@@ -38,7 +38,7 @@
             this.btnOCR.Name = "btnOCR";
             this.btnOCR.Size = new System.Drawing.Size(75, 23);
             this.btnOCR.TabIndex = 0;
-            this.btnOCR.Text = "OCR";
+            this.btnOCR.Text = "Get Image";
             this.btnOCR.UseVisualStyleBackColor = true;
             this.btnOCR.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -47,32 +47,30 @@
             this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult.Location = new System.Drawing.Point(9, 58);
-            this.txtResult.Multiline = true;
+            this.txtResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResult.Location = new System.Drawing.Point(9, 59);
             this.txtResult.Name = "txtResult";
-            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtResult.Size = new System.Drawing.Size(260, 316);
-            this.txtResult.TabIndex = 1;
+            this.txtResult.Size = new System.Drawing.Size(351, 529);
+            this.txtResult.TabIndex = 2;
+            this.txtResult.Text = "";
             // 
-            // Form1
+            // OCR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 380);
+            this.ClientSize = new System.Drawing.Size(373, 602);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.btnOCR);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "OCR";
+            this.Text = "Lets do OCR";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnOCR;
-        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.RichTextBox txtResult;
     }
 }
 
